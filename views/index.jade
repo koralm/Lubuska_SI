@@ -1,5 +1,36 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .container-fluid
+    nav.navbar.navbar-fixed-top.navbar-dark.bg-primary
+      ul.nav.navbar-nav.pull-lg-right
+        li.nav-item
+          a.nav-link(href='#') Rejestracja
+
+  .container.index_margin
+    .jumbotron
+      h1.display-3.text-md-center Witaj na platformie
+      h1.display-3.text-md-center Lubuskiej Sieci Innowacji
+      p.lead.text-md-center
+        | To jest strona dzięki której złoszysz swój projekt
+      hr.m-y-2
+      p.text-md-center
+        | To jest strona rozowja na której możesz zobaczyć demo portalu, zalogować się lub zarejestrować
+      p.lead.text-md-center
+        a.btn.btn-primary.btn-lg.btn-block(href='/demo', type='button') Demo
+        a.btn.btn-secondary.btn-lg.btn-block(type='button', data-toggle="modal", data-target='.logowanie_do_LSI') Logowanie
+
+
+  //MODALS
+  .modal.fade.logowanie_do_LSI
+    .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') ×
+          h4.modal-title Logowanie
+        .modal-body
+          p Podaj login oraz hasło użytkownika:
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Zamknij
+          button.btn.btn-primary(type='button') Zaloguj
