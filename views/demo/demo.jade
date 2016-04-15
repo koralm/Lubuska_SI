@@ -1,33 +1,7 @@
-extends ../layout
+extends demo_top
 
-block content
-    .container-fluid
-        nav.navbar.navbar-fixed-top.navbar-dark.bg-primary
-            ul.nav.navbar-nav
-                li.nav-item
-                    a.navbar-brand Witaj w wersji Demo
-                li.nav-item
-                    .dropdown
-                        button#moje_projekty.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                            | Moje projekty
-                        .dropdown-menu(aria-labelledby='moje_projekty')
-                            h6.dropdown-header Moje projekty
-                            a.dropdown-item(href='#') Projekty własne
-                            a.dropdown-item(href='#') Projekty LSI
-                            a.dropdown-item(href='#') Programy unijne
-                li.nav-item
-                    a#dodaj_projekt.btn.btn-secondary(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                        i.fa.fa-plus
-                        |  Dodaj własny projekt
-                li.nav-item
-                    a#Projekty_LSI.btn.btn-secondary(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                        |  Projekty LSI
-                li.nav-item
-                    a#Programy_unijne.btn.btn-secondary(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                        |  Programy Unijne
-                li.nav-item.pull-lg-right
-                    a.nav-link(href='/') Wyloguj
-        .container.index_margin
+block demo_body
+    .container.index_margin
             .jumbotron
                 h1.display-3.text-md-center Witaj na platformie
                 h1.display-3.text-md-center Lubuskiej Sieci Innowacji
