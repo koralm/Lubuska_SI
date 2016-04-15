@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/dodaj', function(req, res, next) {
-    res.render('demo/d_dodaj', { title: 'Lubuska sieć Innowacji - demo' });
+    res.render('demo/demo_dodaj', { title: 'Lubuska sieć Innowacji - demo' });
 });
 
 module.exports = router;

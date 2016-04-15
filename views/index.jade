@@ -30,7 +30,24 @@ block content
             span(aria-hidden='true') ×
           h4.modal-title Logowanie
         .modal-body
-          p Podaj login oraz hasło użytkownika:
+          .container
+            .row
+              .col-lg-12
+                p Podaj login oraz hasło użytkownika:
+            .row
+              .col-lg-8.col-lg-offset-2
+                .input-group
+                  span#IDlogin.input-group-addon Email
+                  input.form-control(type='text', placeholder='e-mail', aria-describedby='IDlogin')
+            .row
+              .col-lg-8.col-lg-offset-2
+                .input-group
+                  span#IDpas.input-group-addon Hasło
+                  input.form-control(type='text', placeholder='hasło', aria-describedby='IDpas')
+            .row
+              .col-lg-3.col-lg-offset-7
+                a.label.label-warning(href='/', type='button') Zapomniałem hasła
+
         .modal-footer
           button.btn.btn-secondary(type='button', data-dismiss='modal') Zamknij
           button.btn.btn-primary(type='button') Zaloguj
