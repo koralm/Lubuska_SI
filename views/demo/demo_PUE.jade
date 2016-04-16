@@ -1,0 +1,57 @@
+extends demo_top
+
+block scripts
+    script.
+        $(document).ready(function () {
+            var Dtable = $('#example').DataTable({
+                columnDefs: [{
+                    targets: [0],
+                    orderData: [0, 1]
+                }, {
+                    targets: [1],
+                    orderData: [1, 0]
+                }]
+            });
+
+            $('#example tbody').on('click', 'tr', function () {
+                var data = Dtable.row(this).data();
+                if (data[0]=="Rozwój innowacyjnosci") {
+                    window.location = "/demo/PUE/prog1"
+                }
+                else{
+                    alert('Znajdujesz się w wersji DEMO');
+                }
+            });
+        });
+
+block demo_body
+    .container.index_margin1_2
+        h1 Programy UE
+    .container.tab_margin.test
+        table#example.display(cellspacing='0', width='100%')
+            thead
+                tr
+                    th Nazwa Programu
+                    th Instytucja pośrednicząca
+                    th Cel funduszy
+                    th Rodzaj beneficjentów
+                    th Wartość programu
+            tbody
+                tr
+                    td Rozwój innowacyjnosci
+                    td NCBIR
+                    td Dofinansowanie firm
+                    td Przedsiębiorstwa
+                    td 12000000 zł
+                tr
+                    td Rozwój kierunów innowacyjnych
+                    td NCN
+                    td Zwiększenie jakości kształcenia
+                    td Uczelnie wyższe
+                    td 121170750 zł
+                tr
+                    td Zwięszenie konkurencyjności na rynku pracy
+                    td WUP
+                    td Szkolenia specjalistyczne
+                    td Ośrdoki szkoleniowe, uczelnie wyższe
+                    td 125150000 zł

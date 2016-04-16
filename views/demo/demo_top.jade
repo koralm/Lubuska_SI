@@ -1,18 +1,23 @@
 extends ../layout
 
+block scripts
+
 block content
     .container-fluid
         nav.navbar.navbar-fixed-top.navbar-dark.bg-primary
             ul.nav.navbar-nav
                 li.nav-item
-                    a.navbar-brand Witaj w wersji Demo
+                    a.navbar-brand(href="/demo") Witaj w wersji Demo
+                li.nav-item
+                    a#aktualonsci.btn.btn-secondary(href="/demo/aktualnosci", type='button', aria-haspopup='true', aria-expanded='false')
+                        |  Aktualności
                 li.nav-item
                     .dropdown
                         button#moje_projekty.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
                             | Moje projekty
                         .dropdown-menu(aria-labelledby='moje_projekty')
                             h6.dropdown-header Moje projekty
-                            a.dropdown-item(href='#') Projekty własne
+                            a.dropdown-item(href='/demo/wlasne') Projekty własne
                             a.dropdown-item(href='#') Projekty LSI
                             a.dropdown-item(href='#') Programy unijne
                 li.nav-item
@@ -20,10 +25,10 @@ block content
                         i.fa.fa-plus
                         |  Dodaj własny projekt
                 li.nav-item
-                    a#Projekty_LSI.btn.btn-secondary(type='button', aria-haspopup='true', aria-expanded='false')
+                    a#Projekty_LSI.btn.btn-secondary(href="/demo/LSI", type='button', aria-haspopup='true', aria-expanded='false')
                         |  Projekty LSI
                 li.nav-item
-                    a#Programy_unijne.btn.btn-secondary(type='button', aria-haspopup='true', aria-expanded='false')
+                    a#Programy_unijne.btn.btn-secondary(href="/demo/PUE", type='button', aria-haspopup='true', aria-expanded='false')
                         |  Programy Unijne
                 li.nav-item.pull-lg-right
                     a.nav-link(href='/') Wyloguj

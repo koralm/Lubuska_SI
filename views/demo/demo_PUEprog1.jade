@@ -1,0 +1,135 @@
+extends demo_top
+
+block scripts
+
+
+block demo_body
+    .container.index_margin1_2
+        h1 Program 1
+    .container.tab_margin
+        ul.nav.nav-tabs(role='tablist')
+            li.nav-item
+                a.nav-link.active(data-toggle='tab', href='#DDane', role='tab') Szczegóły programu
+            li.nav-item
+                a.nav-link(data-toggle='tab', href='#DZal', role='tab') Załączniki
+            li.nav-item
+                a.nav-link(data-toggle='tab', href='#Dfaq', role='tab') FAQ
+            li.nav-item
+                a.nav-link(data-toggle='tab', href='#Dkontakt', role='tab') Kontakt
+
+
+        .tab-content
+            #DDane.tab-pane.active(role='tabpanel')
+                .container.test.tab_margin
+                    h3 Informacje o programie:
+                        button.btn.btn-md.btn-danger.pull-md-right(type='submit') Ukryj
+                        button.btn.btn-md.btn-success.pull-md-right(type='submit') Zapisz w moich programach
+                    hr
+                    .card
+                        .card-block
+                            h5.card-title Nazwa programu:
+                            p.card-text
+                                | Rozwój innowacyjnosci
+                    .card
+                        .card-block
+                            h5.card-title Instytucja pośrednicząca:
+                            p.card-text
+                                | Narodowe Centrum Badań i Rozwoju
+                    .card
+                        .card-block
+                            h5.card-title Opis programu:
+                            p.card-text
+                                | In incididunt echo park, officia deserunt mcsweeney's proident master cleanse
+                                |thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel
+                                |laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry
+                                |richardson master cleanse. Assumenda you probably haven't heard of them art party
+                                |fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial
+                    .card
+                        .card-block
+                            h5.card-title Link do programu:
+                            p.card-text
+                                ul
+                                    li
+                                        a(href="http://www.ncbir.pl/programy-krajowe/innowacje-spoleczne/") Link 1 - Strona domowa programu
+                                    li
+                                        a(href="http://www.ncbir.pl/programy-krajowe/innowacje-spoleczne/aktualnosci/") Link 2 - Aktualności programu
+                    .card
+                        .card-block
+                            h5.card-title Rodzaj beneficjentów:
+                            p.card-text
+                                ul
+                                    li Małe przedsiębiorstwa
+                                    li Startupy
+                    .card
+                        .card-block
+                            h5.card-title Wartość programu:
+                            p.card-text
+                                | 12000000 zł
+                    .card
+                        .card-block
+                            h5.card-title Wartość zgłaszanych projektów
+                            p.card-text
+                                | 15000 zł - 500000 zł
+                    .card
+                        .card-block
+                            h5.card-title Cel funduszy:
+                            p.card-text
+                                ul
+                                    li Dofinansowanie firm
+                                    li Zakup maszyn
+                                    li Szkolenia pracowników
+                                    li Doradztwo
+                    .card
+                        .card-block
+                            h5.card-title Wymagane dokumenty:
+                            p.card-text
+                                ul
+                                    li Dokument 1
+                                    li Dokument 2
+                                    li Dokument 3
+
+
+            #DZal.tab-pane(role='tabpanel')
+                .container.test.tab_margin
+                    h3 Załączniki:
+                    hr
+                    dl.dl-horizontal
+                        dt.col-sm-3 Szczegółowy opis w pliku pdf:
+                        dd.col-sm-9
+                            a Plik pdf z opisem
+                        dt.col-sm-3 Obrazy i zdjęcia koncepcyjne:
+                        dd.col-sm-9
+                            a Obraz 1
+                        dd.col-sm-9.col-sm-offset-3
+                            a Obraz 2
+                        dd.col-sm-9.col-sm-offset-3
+                            a Obraz 3
+                        dt.col-sm-3 Regulamin:
+                        dd.col-sm-9
+                            a Plik pdf z regulaminem
+
+            #Dfaq.tab-pane(role='tabpanel')
+                .container.test.tab_margin
+                    h3 Najczęściej zadawane pytania:
+                    hr
+            #Dkontakt.tab-pane(role='tabpanel')
+                .container.test.tab_margin
+                    h3 Formularz kontaktowy:
+                    hr
+                    form
+                        fieldset.form-group
+                            label(for='Dquestion') Kontakt z autorem projektu:
+                            textarea#Dquestion.form-control(rows='4', placeholder='Tuta wpisz treść pytania')
+                        fieldset.form-group
+                            label Temat kotrego dotyczy pytanie:
+                            .radio
+                                label.radio-inline
+                                    input#DquestT1(type='radio', name='Dquest', value='DquestT1', checked='')
+                                    |       Współpraca
+                                label.radio-inline
+                                    input#DquestT2(type='radio', name='Dquest', value='DquestT2')
+                                    |       Pytanie ogólne
+                                label.radio-inline
+                                    input#DquestT3(type='radio', name='Dquest', value='DquestT3')
+                                    |       Uwagi
+                        button.btn.btn-lg.btn-primary.pull-lg-right(type='submit') Wyślij zapytanie

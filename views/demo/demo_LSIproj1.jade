@@ -1,0 +1,162 @@
+extends demo_top
+
+block scripts
+
+
+block demo_body
+    .container.index_margin1_2
+        h1 Projekt 1
+    .container.tab_margin
+        ul.nav.nav-tabs(role='tablist')
+            li.nav-item
+                a.nav-link.active(data-toggle='tab', href='#DDane', role='tab') Dane projektu
+            li.nav-item
+                a.nav-link(data-toggle='tab', href='#DZal', role='tab') Załączniki
+            li.nav-item
+                a.nav-link(data-toggle='tab', href='#Dfaq', role='tab') FAQ
+            li.nav-item
+                a.nav-link(data-toggle='tab', href='#Dkontakt', role='tab') Kontakt
+
+
+        .tab-content
+            #DDane.tab-pane.active(role='tabpanel')
+                .container.test.tab_margin
+                    h3 Informacje o projekcie:
+                        button.btn.btn-md.btn-danger.pull-md-right(type='submit') Ukryj
+                        button.btn.btn-md.btn-success.pull-md-right(type='submit') Zapisz w moich projektach
+                    hr
+                    .card
+                        .card-block
+                            h5.card-title Nazwa projektu:
+                            p.card-text
+                                | Projekt 1
+                    .card
+                        .card-block
+                            h5.card-title Krótki opis projektu:
+                            p.card-text
+                                | In incididunt echo park, officia deserunt mcsweeney's proident master cleanse
+                                |thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel
+                                |laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry
+                                |richardson master cleanse. Assumenda you probably haven't heard of them art party
+                                |fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial
+                    .card
+                        .card-block
+                            h5.card-title Szczegółowy opis projektu:
+                            p.card-text
+                                | In incididunt echo park, officia deserunt mcsweeney's proident master cleanse
+                                | thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel
+                                | laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry
+                                | richardson master cleanse. Assumenda you probably haven't heard of them art party
+                                | fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial
+                                | In incididunt echo park, officia deserunt mcsweeney's proident master cleanse
+                                | thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel
+                                | laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry
+                                | richardson master cleanse. Assumenda you probably haven't heard of them art party
+                                | fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial
+                    .card
+                        .card-block
+                            h5.card-title Rodzaj projektu:
+                            p.card-text
+                                |Zwykły
+                    .card
+                        .card-block
+                            h5.card-title Orientacyjny budżet:
+                            p.card-text
+                                | 320000 zł
+                    .card
+                        .card-block
+                            h5.card-title Dofinansowanie UE
+                            p.card-text
+                                | Tak
+                    .card
+                        .card-block
+                            h5.card-title Rodzaj poszukiwanego partnera:
+                            p.card-text
+                                | Kooperant, Finansowy
+                    .card
+                        .card-block
+                            h5.card-title Oczekiwania w stosunku do partnera:
+                            p.card-text
+                                .card
+                                    .card-block
+                                        h6.card-title Procentowy udział w projekcie:
+                                            p.card-text
+                                            ul
+                                                li 35%
+                                .card
+                                    .card-block
+                                        h6.card-title Kadra:
+                                            p.card-text
+                                            ul
+                                                li Inżynier utrzymania ruchu
+                                                li Specjalista od polimerów
+                                .card
+                                    .card-block
+                                        h6.card-title Sprzęt:
+                                            p.card-text
+                                            ul
+                                                li Chromatograf
+                                                li Maszyna wytrzymałościowa
+                                .card
+                                    .card-block
+                                        h6.card-title Certyfikaty:
+                                            p.card-text
+                                            ul
+                                                li ISO-32500
+                                .card
+                                    .card-block
+                                        h6.card-title Doświadczenie:
+                                            p.card-text
+                                            ul
+                                                li Automatyzacja produkcji
+                                                li Synteza i analiza polimerów
+                                .card
+                                    .card-block
+                                        h6.card-title Środki finansowe partnera:
+                                            p.card-text
+                                            ul
+                                                li 10000 zł
+            #DZal.tab-pane(role='tabpanel')
+                .container.test.tab_margin
+                    h3 Załączniki:
+                    hr
+                    dl.dl-horizontal
+                        dt.col-sm-3 Szczegółowy opis w pliku pdf:
+                        dd.col-sm-9
+                            a Plik pdf z opisem
+                        dt.col-sm-3 Obrazy i zdjęcia koncepcyjne:
+                        dd.col-sm-9
+                            a Obraz 1
+                        dd.col-sm-9.col-sm-offset-3
+                            a Obraz 2
+                        dd.col-sm-9.col-sm-offset-3
+                            a Obraz 3
+                        dt.col-sm-3 Kosztorys:
+                        dd.col-sm-9
+                            a Plik pdf z kosztorysem
+
+            #Dfaq.tab-pane(role='tabpanel')
+                .container.test.tab_margin
+                    h3 Najczęściej zadawane pytania:
+                    hr
+            #Dkontakt.tab-pane(role='tabpanel')
+                .container.test.tab_margin
+                    h3 Formularz kontaktowy:
+                    hr
+                    form
+                        fieldset.form-group
+                            label(for='Dquestion') Kontakt z autorem projektu:
+                            textarea#Dquestion.form-control(rows='4', placeholder='Tuta wpisz treść pytania')
+                        fieldset.form-group
+                            label Temat kotrego dotyczy pytanie:
+                            .radio
+                                label.radio-inline
+                                    input#DquestT1(type='radio', name='Dquest', value='DquestT1', checked='')
+                                    |       Współpraca
+                                label.radio-inline
+                                    input#DquestT2(type='radio', name='Dquest', value='DquestT2')
+                                    |       Pytanie ogólne
+                                label.radio-inline
+                                    input#DquestT3(type='radio', name='Dquest', value='DquestT3')
+                                    |       Uwagi
+                        button.btn.btn-lg.btn-primary.pull-lg-right(type='submit') Wyślij zapytanie

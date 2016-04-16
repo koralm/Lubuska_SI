@@ -3,14 +3,24 @@ html
   head
     title= title
     link(rel='stylesheet', href='/font-awesome/css/font-awesome.css')
+    link(rel='stylesheet', href='/select2/dist/css/select2.css')
+    link(rel='stylesheet', href='/data_tables/datatables.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+
+
+    //MAIN SCRIPTS
+    //JQUERY
+    script(src='/jquery/dist/jquery.js')
+    script(src='/jquery-ui/jquery-ui.js')
+    script(src='/bootstrap/dist/js/bootstrap.js')
+    script(src='/data_tables/datatables.js')
+    script(src='/select2/dist/js/select2.full.js')
+
+    block scripts
 
   body
     block content
 
 
 
-  //BOTTOM MAIN SCRIPTS
-  //JQUERY
-  script(src='jquery/dist/jquery.js')
-  script(src='bootstrap/dist/js/bootstrap.js')
+

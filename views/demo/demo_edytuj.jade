@@ -1,0 +1,137 @@
+extends demo_top
+
+block scripts
+    script.
+        $(document).ready(function () {
+            $('#DLSImem').select2();
+            $("#DLSIMemb").hide()
+        })
+
+        function dupa(data) {
+            if (data == 1) {
+                $("#DLSIMemb").hide();
+            }
+            else {
+                $("#DLSIMemb").show();
+            }
+        }
+
+block demo_body
+    .container.index_margin1_2
+        h1 Projekt własny edycja
+    .container.tab_margin.test
+        h3 Edycja:
+        hr
+        form
+            fieldset.form-group
+                label(for='Dexampletitle') Nazwa projektu:
+                input#Dexampletitle.form-control(type='text', value='Projekt 1')
+            fieldset.form-group
+                label(for='Dshortdescription1') Krótki opis projektu:
+                textarea#Dshortdescription1.form-control(rows='3')
+                    | In incididunt echo park, officia deserunt mcsweeney's proident master cleanse
+                    | thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel
+                    | laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry
+                    | richardson master cleanse. Assumenda you probably haven't heard of them art party
+                    | fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial
+            fieldset.form-group
+                label(for='Dlongdescription') Długi opis projektu:
+                textarea#Dlongdescription.form-control(rows='6')
+                    | In incididunt echo park, officia deserunt mcsweeney's proident master cleanse
+                    | thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel
+                    | laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry
+                    | richardson master cleanse. Assumenda you probably haven't heard of them art party
+                    | fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial
+                    | In incididunt echo park, officia deserunt mcsweeney's proident master cleanse
+                    | thundercats sapiente veniam. Excepteur VHS elit, proident shoreditch +1 biodiesel
+                    | laborum craft beer. Single-origin coffee wayfarers irure four loko, cupidatat terry
+                    | richardson master cleanse. Assumenda you probably haven't heard of them art party
+                    | fanny pack, tattooed nulla cardigan tempor ad. Proident wolf nesciunt sartorial
+            fieldset.form-group
+                label Rodzaj projektu:
+                .checkbox
+                    label.checkbox-inline
+                        input#Dprojtype1(type='checkbox', value='option1')
+                        |  Zwykły
+                    label.checkbox-inline
+                        input#Dprojtype2(type='checkbox', value='option2')
+                        |  Badawczy
+                    label.checkbox-inline
+                        input#Dprojtype3(type='checkbox', value='option3')
+                        |  Wdrożeniowy
+            fieldset.form-group
+                label(for='DUEdonation') Orientacyjny budżet:
+                input#DUEdonation.form-control(type='text', value="320000 zł")
+            fieldset.form-group
+                label Projekt z dofinansowaniem UE:
+                .radio
+                    label.radio-inline
+                        input#DUEfundedY(type='radio', name='UEfunded', value='DUEFundedY', checked='')
+                        |       Tak
+                    label.radio-inline
+                        input#DUEfundedN(type='radio', name='UEfunded', value='DUEFundedN')
+                        |       Nie
+            fieldset.form-group
+                label Projekt kierowany do wszystkich
+                .radio
+                    label.radio-inline
+                        input#DPartall(type='radio', name='DPartner', value='Dpartall', checked='', onclick='dupa(1)')
+                        |       Tak
+                    label.radio-inline
+                        input#DPartsome(type='radio', name='DPartner', value='Dpartsome', onclick='dupa(0)')
+                        |       Nie
+            fieldset#DLSIMemb.form-group
+                label Wybierz preferowanych partnerów
+                select.form-control(id="DLSImem", multiple='multiple')
+                    option(value='U1') Partner1
+                    option(value='U2') Partner2
+                    option(value='U3') Partner3
+                    option(value='U4') Partner4
+            fieldset.form-group
+                label Rodzaj poszukiwanego partnera:
+                .checkbox
+                    label.checkbox-inline
+                        input#Dpart1(type='checkbox', value='option1')
+                        |  Kooperant
+                    label.checkbox-inline
+                        input#Dpart2(type='checkbox', value='option2')
+                        |  Podwykonawca
+                    label.checkbox-inline
+                        input#Dpart3(type='checkbox', value='option3')
+                        |  Konsorcjant
+                    label.checkbox-inline
+                        input#Dpart4(type='checkbox', value='option3')
+                        |  Finansowy
+            fieldset
+                label Oczekiwania w stosunku do partnera:
+                .form.col-lg-offset-1
+                    .form-group.row
+                        label.col-sm-3.form-control-label(for='Dinputprec') Procentowy udział w projekcie:
+                        .col-sm-9
+                            input#Dinputprec.form-control(value='35 %')
+                    .form-group.row
+                        label.col-sm-3.form-control-label(for='Dpeople') Kadra:
+                        .col-sm-9
+                            input#Dpeople.form-control(value="Inżynier utrzymania ruchu, Specjalista od polimerów")
+                    .form-group.row
+                        label.col-sm-3.form-control-label(for='Deq') Sprzęt:
+                        .col-sm-9
+                            input#Deq.form-control(value="Chromatograf, Maszyna wytrzymałościowa")
+                    .form-group.row
+                        label.col-sm-3.form-control-label(for='Dcert') Certyfikaty:
+                        .col-sm-9
+                            input#Dcert.form-control(value='ISO-32500')
+                    .form-group.row
+                        label.col-sm-3.form-control-label(for='Dexp') Doświadczenie:
+                        .col-sm-9
+                            input#Dexp.form-control(value='Automatyzacja produkcji, Synteza i analiza polimerów')
+                    .form-group.row
+                        label.col-sm-3.form-control-label(for='Dgold') Środki finansowe partnera:
+                        .col-sm-9
+                            input#Dgold.form-control(value="10000 zł")
+            fieldset.form-group
+                label(for='exampleInputFile') Dodaj plik
+                input#exampleInputFile.form-control-file(type='file')
+                small.text-muted
+                    | Tutaj możesz załączyć swoje pliki dotyczące projektu
+            button.btn.btn-lg.btn-warning(type='submit') Zapisz zmiany

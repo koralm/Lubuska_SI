@@ -1,0 +1,57 @@
+extends demo_top
+
+block scripts
+    script.
+        $(document).ready(function () {
+            var table = $('#example').DataTable({
+                select: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        text: 'Edytuj',
+                        action: function (e, dt, node, config) {
+                            window.location = "/demo/wlasne/edytuj"
+                        }
+                    },
+                    {
+                        text: 'Usuń',
+                        action: function (e, dt, node, config) {
+                            table.row('.selected').remove().draw(false);
+                        }
+                    }
+                ]
+            });
+        });
+
+        $('#example tbody').on('click', 'tr', function () {
+            if ($(this).hasClass('selected')) {
+                $(this).removeClass('selected');
+            }
+            else {
+                table.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+            }
+        });
+
+block demo_body
+    .container.index_margin1_2
+        h1 Projekty własne
+    .container.tab_margin.test
+        table#example.display(cellspacing='0', width='100%')
+            thead
+                tr
+                    th Nazwa projektu
+                    th Rodzaj
+                    th Poszukuje
+                    th Budżet
+            tbody
+                tr
+                    td Projekt 1
+                    td Zwykły
+                    td Podwykonawcy
+                    td 320000 zł
+                tr
+                    td Projekt 2
+                    td Wdrożeniowy
+                    td Kooperant
+                    td 1320000 zł
