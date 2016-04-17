@@ -5,9 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mailer = require('./modules/mailer');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var demo = require('./routes/demo');
+var register = require('./routes/utilities/register');
 
 
 var app = express();
@@ -33,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/rejestracja', register);
 app.use('/demo', demo);
 
 

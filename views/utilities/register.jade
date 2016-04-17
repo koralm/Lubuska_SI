@@ -1,0 +1,81 @@
+extends ../layout
+
+block scripts
+    script.
+        $(document).ready(function () {
+            $(".alert").hide()
+        })
+
+        function show () {
+            $(".alert").show()
+            }
+
+block content
+    .container-fluid
+        nav.navbar.navbar-fixed-top.navbar-dark.bg-primary
+            ul.nav.navbar-nav.pull-lg-right
+                li.nav-item
+                    a.nav-link(href='#') Rejestracja
+
+    .container.index_margin1_2
+        h1 Rejestracja nowego użytkownika
+        .alert.alert-success.alert-dismissible.fade.in(role='alert')
+            button.close(type='button', data-dismiss='alert', aria-label='Close')
+                span(aria-hidden='true') ×
+            strong Gratulacje !!
+            |  Rejestracja przebiegła pomyślnie.
+            |  potwierdzenie zostało przesłane na adres email.
+    .container.tab_margin.test
+        h3 Wypełnij formularz:
+        hr
+        form
+            fieldset.form-group.row
+                label.col-sm-3.form-control-label(for='REmail') Email:
+                .col-sm-4
+                    .input-group
+                        span#REmail.input-group-addon @
+                        input.form-control(type='text', placeholder='Email', aria-describedby='REmail')
+                .col-sm-4
+                    .input-group
+                        span#REmail2.input-group-addon @
+                        input.form-control(type='text', placeholder='Powtórz email', aria-describedby='REmail2')
+            fieldset.form-group.row
+                label.col-sm-3.form-control-label(for='Rcup') Hasło:
+                .col-sm-4
+                    .input-group
+                        span#Rcup.input-group-addon #
+                        input.form-control(type='text', placeholder='Hasło', aria-describedby='Rcup')
+                .col-sm-4
+                    .input-group
+                        span#Rcup2.input-group-addon #
+                        input.form-control(type='text', placeholder='Powtórz hasło', aria-describedby='Rcup2')
+            fieldset.form-group.row
+                label.col-sm-3.form-control-label(for='Rcomp') Nazwa firmy/instytucji:
+                .col-sm-8
+                    .input-group
+                        span#Rcomp.input-group-addon
+                        input.form-control(type='text', placeholder='Nazwa', aria-describedby='Rcomp')
+            fieldset.form-group.row
+                label.col-sm-3.form-control-label(for='Rcomplink') Adres strony firmy/instytucji:
+                .col-sm-8
+                    .input-group
+                        span#Rcomplink.input-group-addon
+                        input.form-control(type='text', placeholder='Link', aria-describedby='Rcomplink')
+            fieldset.form-group.row
+                label.col-sm-3.form-control-label(for='Rcompdesc') Opis firmy/instytucji:
+                .col-sm-8
+                    textarea#Rcompdesc.form-control(rows='3', placeholder='Krótki opis ...')
+            fieldset.form-group.row
+                label.col-sm-3.form-control-label(for='Rcompcontact') Osoba kontaktowa:
+                .col-sm-8
+                    .input-group
+                        span#Rcompcontact.input-group-addon
+                        input.form-control(type='text', placeholder='Imię Nazwisko', aria-describedby='Rcompcontact')
+            fieldset.form-group.row
+                label.col-sm-3.form-control-label(for='Rcompcontacttel') Numer telefonu:
+                .col-sm-8
+                    .input-group
+                        span#Rcompcontacttel.input-group-addon
+                        input.form-control(type='text', placeholder='Numer telefonu', aria-describedby='Rcompcontacttel')
+        button.btn.btn-lg.btn-success.pull-lg-right(onclick='show()') Wyślij zgłoszenie
+        a.btn.btn-lg.btn-primary.pull-lg-right(href='/', type='submit_register') Wróć
